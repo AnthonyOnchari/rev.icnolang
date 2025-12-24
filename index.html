@@ -112,11 +112,11 @@
             Leave your name and WhatsApp number below to be added to our official group.
         </p>
 
-        <form class="notify-form">
-            <input type="text" placeholder="Your Full Name" required>
-            <input type="tel" placeholder="WhatsApp Phone Number" required>
-            <button type="submit">Join WhatsApp Group</button>
-        </form>
+        <form class="notify-form" id="contactForm">
+    <input type="text" id="name" placeholder="Your Full Name" required>
+    <input type="tel" id="number" placeholder="WhatsApp Phone Number" required>
+    <button type="submit">Join WhatsApp Group</button>
+</form>
 
         <div class="note">
             📌 Your number will only be used to add you to the WhatsApp group.
@@ -126,6 +126,21 @@
             © 2025 Rev. ICN OLANG • All Rights Reserved
         </div>
     </div>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
+    const name = document.getElementById("name").value;
+    const number = document.getElementById("number").value;
+
+    fetch("https://script.google.com/macros/s/AKfycbwpeOut3ZuLZ3WZLKOCDu8oMAMnZJVDPVP_eDENFq3Z6-U4X-Du4eKz5fHrutI7qFV1/exec", {
+        method: "POST",
+        body: JSON.stringify({ name, number }),
+        headers: { "Content-Type": "application/json" }
+    })
+    .then(response => alert("✅ Thank you! Your details have been submitted."))
+    .catch(error => alert("❌ Something went wrong. Please try again."));
+});
+</script>
 </body>
 </html>
