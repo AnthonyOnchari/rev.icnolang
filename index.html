@@ -1,73 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Rev. ICN Olang Ministries</title>
-        <link rel="stylesheet" href="style.css" />
-        </head>
-        <body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Rev. ICN OLANG</title>
 
-          <!-- Header -->
-            <header>
-                <h1>Rev. ICN Olang Ministries</h1>
-                    <nav>
-                          <a href="#home">Home</a>
-                                <a href="#about">About</a>
-                                      <a href="#sermons">Sermons</a>
-                                            <a href="#prayer">Prayer</a>
-                                                  <a href="#contact">Contact</a>
-                                                      </nav>
-                                                        </header>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-                                                          <!-- Hero Section -->
-                                                            <section id="home" class="hero">
-                                                                <h2>Raising Lives Through the Word of God</h2>
-                                                                    <p>Welcome to the official ministry website of Rev. ICN Olang</p>
-                                                                        <button onclick="scrollToPrayer()">Request Prayer</button>
-                                                                          </section>
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #1c1c1c, #2a2a2a, #3a3a3a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
 
-                                                                            <!-- About Section -->
-                                                                              <section id="about">
-                                                                                  <h2>About Rev. ICN Olang</h2>
-                                                                                      <p>
-                                                                                            Rev. ICN Olang is a devoted servant of God called to preach, teach,
-                                                                                                  and restore lives through the Gospel of Jesus Christ.
-                                                                                                      </p>
-                                                                                                        </section>
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
 
-                                                                                                          <!-- Sermons Section -->
-                                                                                                            <section id="sermons">
-                                                                                                                <h2>Sermons & Teachings</h2>
-                                                                                                                    <p>Watch and listen to powerful messages.</p>
-                                                                                                                        <div class="sermon-box">
-                                                                                                                              <p>Sermons coming soon...</p>
-                                                                                                                                  </div>
-                                                                                                                                    </section>
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
 
-                                                                                                                                      <!-- Prayer Section -->
-                                                                                                                                        <section id="prayer">
-                                                                                                                                            <h2>Prayer Requests</h2>
-                                                                                                                                                <form id="prayerForm">
-                                                                                                                                                      <input type="text" placeholder="Your Name" required />
-                                                                                                                                                            <textarea placeholder="Your Prayer Request" required></textarea>
-                                                                                                                                                                  <button type="submit">Submit Prayer</button>
-                                                                                                                                                                      </form>
-                                                                                                                                                                          <p id="responseMessage"></p>
-                                                                                                                                                                            </section>
+        h2 {
+            font-size: 1.3rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #f0c27b;
+        }
 
-                                                                                                                                                                              <!-- Contact Section -->
-                                                                                                                                                                                <section id="contact">
-                                                                                                                                                                                    <h2>Contact Us</h2>
-                                                                                                                                                                                        <p>Email: info@icnolang.org</p>
-                                                                                                                                                                                            <p>Phone: +254 XXX XXX XXX</p>
-                                                                                                                                                                                              </section>
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #dcdcdc;
+        }
 
-                                                                                                                                                                                                <!-- Footer -->
-                                                                                                                                                                                                  <footer>
-                                                                                                                                                                                                      <p>&copy; 2025 Rev. ICN Olang Ministries. All Rights Reserved.</p>
-                                                                                                                                                                                                        </footer>
+        .notify-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-                                                                                                                                                                                                          <script src="script.js"></script>
-                                                                                                                                                                                                          </body>
-                                                                                                                                                                                                          </html>
+        .notify-form input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            width: 260px;
+            outline: none;
+        }
+
+        .notify-form button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            background-color: #25D366;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .notify-form button:hover {
+            background-color: #1ebe57;
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #bfbfbf;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #9e9e9e;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .notify-form input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Coming Soon</h1>
+        <h2>Rev. ICN OLANG</h2>
+
+        <p>
+            We are preparing something powerful and impactful.
+            Leave your name and WhatsApp number below to be added to our official group.
+        </p>
+
+        <form class="notify-form">
+            <input type="text" placeholder="Your Full Name" required>
+            <input type="tel" placeholder="WhatsApp Phone Number" required>
+            <button type="submit">Join WhatsApp Group</button>
+        </form>
+
+        <div class="note">
+            📌 Your number will only be used to add you to the WhatsApp group.
+        </div>
+
+        <div class="footer">
+            © 2025 Rev. ICN OLANG • All Rights Reserved
+        </div>
+    </div>
+
+</body>
+</html>
