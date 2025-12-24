@@ -130,16 +130,27 @@
 document.getElementById("contactForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const number = document.getElementById("number").value;
+    const name = document.getElementById("name").value.trim();
+    const number = document.getElementById("number").value.trim();
 
-    fetch("https://script.google.com/macros/s/AKfycbwpeOut3ZuLZ3WZLKOCDu8oMAMnZJVDPVP_eDENFq3Z6-U4X-Du4eKz5fHrutI7qFV1/exec", {
+    if (!name || !number) {
+        alert("Please fill in both fields.");
+        return;
+    }
+
+    fetch("https://script.google.com/macros/s/AKfycbxat_QV4uhjZZnAC5FC0SYPZ3kyNHIZ2xUZgzO7i6-eT6x34nszcDPU7krUpoOY6l86/exec", {
         method: "POST",
-        body: JSON.stringify({ name, number }),
-        headers: { "Content-Type": "application/json" }
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, number })
     })
-    .then(response => alert("✅ Thank you! Your details have been submitted."))
-    .catch(error => alert("❌ Something went wrong. Please try again."));
+    .then(() => {
+        alert("✅ Thank you! Your details have been submitted.");
+        document.getElementById("contactForm").reset();
+    })
+    .catch(() => {
+        alert("❌ Something went wrong. Please try again.");
+    });
 });
 </script>
 </body>
