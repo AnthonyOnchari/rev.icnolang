@@ -1,73 +1,635 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Rev. ICN Olang Ministries</title>
-        <link rel="stylesheet" href="style.css" />
-        </head>
-        <body>
-
-          <!-- Header -->
-            <header>
-                <h1>Rev. ICN Olang Ministries</h1>
-                    <nav>
-                          <a href="#home">Home</a>
-                                <a href="#about">About</a>
-                                      <a href="#sermons">Sermons</a>
-                                            <a href="#prayer">Prayer</a>
-                                                  <a href="#contact">Contact</a>
-                                                      </nav>
-                                                        </header>
-
-                                                          <!-- Hero Section -->
-                                                            <section id="home" class="hero">
-                                                                <h2>Raising Lives Through the Word of God</h2>
-                                                                    <p>Welcome to the official ministry website of Rev. ICN Olang</p>
-                                                                        <button onclick="scrollToPrayer()">Request Prayer</button>
-                                                                          </section>
-
-                                                                            <!-- About Section -->
-                                                                              <section id="about">
-                                                                                  <h2>About Rev. ICN Olang</h2>
-                                                                                      <p>
-                                                                                            Rev. ICN Olang is a devoted servant of God called to preach, teach,
-                                                                                                  and restore lives through the Gospel of Jesus Christ.
-                                                                                                      </p>
-                                                                                                        </section>
-
-                                                                                                          <!-- Sermons Section -->
-                                                                                                            <section id="sermons">
-                                                                                                                <h2>Sermons & Teachings</h2>
-                                                                                                                    <p>Watch and listen to powerful messages.</p>
-                                                                                                                        <div class="sermon-box">
-                                                                                                                              <p>Sermons coming soon...</p>
-                                                                                                                                  </div>
-                                                                                                                                    </section>
-
-                                                                                                                                      <!-- Prayer Section -->
-                                                                                                                                        <section id="prayer">
-                                                                                                                                            <h2>Prayer Requests</h2>
-                                                                                                                                                <form id="prayerForm">
-                                                                                                                                                      <input type="text" placeholder="Your Name" required />
-                                                                                                                                                            <textarea placeholder="Your Prayer Request" required></textarea>
-                                                                                                                                                                  <button type="submit">Submit Prayer</button>
-                                                                                                                                                                      </form>
-                                                                                                                                                                          <p id="responseMessage"></p>
-                                                                                                                                                                            </section>
-
-                                                                                                                                                                              <!-- Contact Section -->
-                                                                                                                                                                                <section id="contact">
-                                                                                                                                                                                    <h2>Contact Us</h2>
-                                                                                                                                                                                        <p>Email: info@icnolang.org</p>
-                                                                                                                                                                                            <p>Phone: +254 XXX XXX XXX</p>
-                                                                                                                                                                                              </section>
-
-                                                                                                                                                                                                <!-- Footer -->
-                                                                                                                                                                                                  <footer>
-                                                                                                                                                                                                      <p>&copy; 2025 Rev. ICN Olang Ministries. All Rights Reserved.</p>
-                                                                                                                                                                                                        </footer>
-
-                                                                                                                                                                                                          <script src="script.js"></script>
-                                                                                                                                                                                                          </body>
-                                                                                                                                                                                                          </html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rev. ICN Olang | Active Word Apostolic Centre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #8B4513;
+            --accent: #e67e22;
+            --light: #f9f9f9;
+            --dark: #1a252f;
+            --gray: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(26, 37, 47, 0.9), rgba(26, 37, 47, 0.9)), url('https://images.unsplash.com/photo-1518834103328-93d45986dce1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .header-content {
+            padding: 2rem 0;
+        }
+        
+        .scripture {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            color: var(--accent);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .church-name {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .vision-statement {
+            background-color: rgba(139, 69, 19, 0.8);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1.5rem auto;
+            max-width: 800px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 0;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 1rem 0;
+            display: block;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Main Content */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            background: url('https://images.unsplash.com/photo-1566458257141-8d56d1ac8f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Mission & Vision */
+        .mission-vision {
+            background-color: #f5f5f5;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .mission-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mission-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .mission-card ul {
+            list-style-position: inside;
+            margin-top: 1rem;
+        }
+        
+        .mission-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Core Values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .value-item:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .value-item:hover h4 {
+            color: white;
+        }
+        
+        .value-item i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .value-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        
+        /* Contact */
+        .contact-section {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .contact-section h2 {
+            color: white;
+            border-color: var(--accent);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .contact-form button {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-form button:hover {
+            background-color: #d35400;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark);
+                padding: 1rem 0;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0;
+            }
+            
+            .nav-links a {
+                padding: 0.8rem 20px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .church-name {
+                font-size: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Rev. I.C.N Olang</h1>
+                <p class="tagline">House of Consecration</p>
+                <h2 class="church-name">ACTIVE WORD APOSTOLIC CENTRE</h2>
+                <p class="scripture">"For the word of God is alive and active. Sharper than any double-edged sword..." - Hebrews 4:12</p>
+                <div class="vision-statement">
+                    Win one, Build one, Release one
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Rev. <span>ICN Olang</span></a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#mission">Mission & Vision</a></li>
+                <li><a href="#values">Core Values</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Rev. I.C.N Olang</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Rev. Isaac C.N. Olang is the founder and senior pastor of Active Word Apostolic Centre, a ministry dedicated to teaching and preaching the whole counsel of God without adding or subtracting from the Holy writ.</p>
+                    <p>With a passion for restoring foundational apostolic doctrine and mending the cracks of Christian leadership, Rev. Olang focuses on equipping believers with proper understanding of God, the Church, the world, the devil, and who they are in Christ.</p>
+                    <p>His ministry emphasizes the activation of gifts and talents of the Holy Spirit that lie latent due to ignorance, releasing mature believers into productive ministry as co-laborers with Christ.</p>
+                    <p><strong>Motto:</strong> BUILDING LIVING TEMPLES!</p>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mission & Vision Section -->
+    <section id="mission" class="mission-vision">
+        <div class="container">
+            <h2 class="section-title">Mission & Vision</h2>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Vision</h3>
+                    <p><strong>Win one, Build one, Release one</strong></p>
+                    <p>To see believers transformed into Christlike maturity and released into productive ministry as co-laborers with Christ.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Mission</h3>
+                    <ul>
+                        <li>Equip believers with proper understanding of God, the Church, the world, the devil and who they are in Christ</li>
+                        <li>Train believers with an aim of adding workforce in the harvest field</li>
+                        <li>Activate gifts and talents of the Holy Spirit lying latent</li>
+                        <li>Release mature believers into productive ministry</li>
+                        <li>Teach and preach the whole counsel of God</li>
+                        <li>Restore foundational apostolic doctrine</li>
+                        <li>Facilitate aggressive propagation of the great commission</li>
+                    </ul>
+                </div>
+                
+                <div class="mission-card">
+                    <i class="fas fa-cross"></i>
+                    <h3>Purpose Statement</h3>
+                    <p>Win people to Jesus, incorporate them into God's family, develop them to Christlike maturity, equip them for ministry and life mission in the world to glorify God.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Core Values Section -->
+    <section id="values">
+        <div class="container">
+            <h2 class="section-title">Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-church"></i>
+                    <h4>Holiness</h4>
+                    <p>Living a life set apart for God's purposes</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-heart"></i>
+                    <h4>Love</h4>
+                    <p>Demonstrating Christ's love in all relationships</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4>Humility</h4>
+                    <p>Walking in humility before God and others</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-pray"></i>
+                    <h4>Prayer</h4>
+                    <p>Maintaining constant communion with God</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-user-friends"></i>
+                    <h4>Servant-hood</h4>
+                    <p>Serving others with a Christlike attitude</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h4>Stewardship</h4>
+                    <p>Responsibly managing God-given resources</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-book-open"></i>
+                    <h4>Scholarship</h4>
+                    <p>Diligent study and application of God's Word</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-award"></i>
+                    <h4>Excellence</h4>
+                    <p>Doing all things to the glory of God</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Integrity</h4>
+                    <p>Consistency in character and conduct</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Rev. I.C.N Olang</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>isaacolang@gmail.com</p>
+                            <p>Pastolang@yahoo.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+254 723 322 295</p>
+                            <p>+254 712 100 828</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-church"></i>
+                        <div>
+                            <h4>Church</h4>
+                            <p>Active Word Apostolic Centre</p>
+                            <p>House of Consecration</p>
+                            <p>Scripture Foundation: Hebrews 4:12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Active Word Apostolic Centre</h3>
+                <p>House of Consecration | Building Living Temples</p>
+                <p class="copyright">Compiled by Rev. I.C.N. Olang &copy; <span id="currentYear"></span></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! Rev. Olang will get back to you soon.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
